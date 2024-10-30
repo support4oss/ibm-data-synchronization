@@ -22,12 +22,12 @@ For enterprises and users grappling with the complexities of contemporary data m
 Pull the image from Docker Hub by running the following command:
 
 ```
-docker pull ibmopensource/ibmseatunnel:datasynchronization-<version>
+docker pull ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 
 Example:
 ```
-docker pull ibmopensource/ibmseatunnel:datasynchronization-2.3.3.1
+docker pull ghcr.io/support4oss/ibmseatunnel:datasynchronization-2.3.6.1
 ```
 
 ### Step 2
@@ -58,7 +58,7 @@ docker volume ls
 Get the Docker container up and running using the following command:
 
 ```
-docker run -d -v <user_data>:/var/lib/mysql --name ibmdatasynchronization -p 8801:8801 ibmopensource/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the volume created for storing user data
 
@@ -95,7 +95,7 @@ where `<host_ip>` is the IP address of the host machine.
 
 The login credentials to access the UI are: 
 * `Username: admin`
-* `Password: admin`
+* `Password: IBM@DATA#SYNC@2024`
 
 ### From the command line:
 
@@ -157,7 +157,7 @@ docker ps -a
 * Run the following command to deploy a new IBM Data Synchronization container without any data loss from the stopped container:
 
 ```
-docker run -v <user_data>:/var/lib/mysql --name datasynchronization -d -p 8801:8801 ibmopensource/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the persistent volume for the user data in the stopped container.
 
@@ -180,13 +180,13 @@ docker stop ibmdatasynchronization
 * Pull the version of the IBM Data Synchronization image that you want to update your container to:
 
 ```
-docker pull ibmopensource/ibmseatunnel:datasynchronization-<version>
+docker pull ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 
 * Run the following command to deploy a IBM Data Synchronization container from this new image without any data loss from the stopped container:
 
 ```
-docker run -d -v <user_data>:/var/lib/mysql --name ibmdatasynchronization -p 8801:8801 ibmopensource/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the persistent volume for the user data in the stopped container.
 
