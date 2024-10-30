@@ -58,7 +58,7 @@ docker volume ls
 Get the Docker container up and running using the following command:
 
 ```
-docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the volume created for storing user data
 
@@ -157,7 +157,7 @@ docker ps -a
 * Run the following command to deploy a new IBM Data Synchronization container without any data loss from the stopped container:
 
 ```
-docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the persistent volume for the user data in the stopped container.
 
@@ -186,7 +186,7 @@ docker pull ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 * Run the following command to deploy a IBM Data Synchronization container from this new image without any data loss from the stopped container:
 
 ```
-docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql  --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
+docker run -d  -e MYSQL_ROOT_PASSWORD=your_password  -e "TZ=Asia/Kolkata" -v <user_data>:/var/lib/mysql --name ibmdatasynchronization -p 8801:8801 ghcr.io/support4oss/ibmseatunnel:datasynchronization-<version>
 ```
 where `<user_data>` is the persistent volume for the user data in the stopped container.
 
