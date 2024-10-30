@@ -198,17 +198,12 @@ docker ps -a
 
 # What's new in datasynchronization-2.3.6.1
 
-* Docker Architecture Simplification: Combined SeaTunnel Web and SeaTunnel Engine in a single Docker container to streamline deployment, reduce overhead, and offer a unified management and configuration process.
-
-* SQL Support for Task Creation: Introduced support for creating SeaTunnel tasks using SQL alongside the existing HOCON format, offering more flexibility for users in task setup.
-
-* Zeta CDC Sync Enhancements: Improved resource management by releasing idle readers during synchronization and optimizing writing performance with multi-threaded capabilities for better scalability and efficiency.
-
-* Event Notification Mechanism: Added an event notification mechanism for emitting job status changes and DDL updates, allowing for better monitoring and integration with external systems.
-
-* Milvus Vector Database Integration: Introduced support for the vector database Milvus, enhancing SeaTunnel's capabilities in AI and machine learning applications by efficiently handling high-dimensional vectors.
-
-* Other Updates: Added user-defined parameter functions, support for new connectors (Presto, Trino Sink), and improvements to Transform, Zeta Engine, along with various bug fixes and documentation updates.
+* `SQL-Based Task Creation`: Support for creating IBM Data Synchronization tasks using SQL, in addition to the existing HOCON format.
+* `Kafka as Virtual Table`: Kafka topics can be managed as virtual tables, enabling real-time data processing and flexible transformations within the IBM Data Synchronization interface.
+* `Full SQL Transformation Support`: Improved support for SQL transformations to address integration job issues, with a structured graphical interface for managing data pipelines.
+* `WatsonX.data Integration`: Enhanced ETL capabilities and real-time data transformation to integrate with WatsonX.data for streamlined data management and analytics.
+* `Hazelcast Cluster and Database Connectivity Dashboard`: New dashboard to monitor Hazelcast cluster health and database connectivity, tracking key metrics like active nodes, connection counts, and system load.
+* `User-Defined Parameter Functions and New Connectors`: Added support for user-defined parameter functions and multiple connectors (e.g., Presto, Db2, Trino Sink), along with updates to SQL transform functionality and Zeta Engine.
 
 # Troubleshooting
 
